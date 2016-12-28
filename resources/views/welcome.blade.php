@@ -36,7 +36,7 @@
             </div>
         </div>
         <div id="app">
-  <p>{{ message }}</p>
+  <p>@{{ message }}</p>
 </div>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script type="text/javascript">
