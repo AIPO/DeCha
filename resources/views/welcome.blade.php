@@ -39,7 +39,7 @@
   <p>{{ message }}</p>
 </div>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <script>
+        <script type="text/javascript">
         new Vue({
   el: '#app',
   data: {
