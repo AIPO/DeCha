@@ -5,14 +5,14 @@
     </head>
     <body>
         <div class='container' id="app">
-  <p>@{{ message }}</p>
+  <p>Hallo @{{ name}} !</p>
 </div>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <script type="text/javascript">
-        new Vue({
+        <script>
+        var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!'
+    name: 'Povilas'
   }
 })
         </script>
