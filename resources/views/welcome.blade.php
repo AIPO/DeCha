@@ -5,7 +5,7 @@
 </head>
 <body>
   <div v-cloak class='container' id="app" >
-    <p v-cloak>Hallo @{{ name}} !</p>
+    <p>Hallo @{{ name}} !</p>
     <input type='text' v-model='name'>
   </div>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
