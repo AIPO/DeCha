@@ -7,13 +7,14 @@
   <div v-cloak class='container' id="app" >
     <div class="row">
       <div class="col-sm-12">
-        <h1>My Todos</h1>
+        <h1>List of Todos contains: @{{ todoCount }} items.</h1>
         <ul class="list-group" v-if="todos.length > 0">
           <li class="list-group-item"
           v-bind:class="{completed : todo.completed}"
           v-for="todo in todos">
           @{{ todo.title }}
             <button class="btn btn-danger btn-xs pull-right" v-on:click="deleteTodo(todo)">Delete</button>
+            <button class="btn btn-success btn-xs pull-right" v-on:click="todoCompleted(todo)">Completed</button>
           </li>
         </ul>
         <div v-else>
@@ -44,6 +45,11 @@
       todos: [{id:1, title:'1st task', completed:true}],
       newTodo:{id:null, title:"", completed:false}
     },
+    computed:{
+      todoCount(){
+        return this.todos.length
+      }
+    },
     methods:{
       addNewTodo(newTodo){
         this.todos.push(newTodo)
@@ -51,8 +57,11 @@
       },
 
     deleteTodo(todo){
-  this.todos.splice(todo, 1)
-      }
+      this.todos.splice(todo, 1)
+    },
+    todoCompleted(todo){
+      todo.completed= ! todo.completed
+    }
     }
   })
   </script>
