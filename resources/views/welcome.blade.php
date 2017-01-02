@@ -60,7 +60,9 @@
       this.todos.splice(todo, 1)
     },
     todoCompleted(todo){
-      todo.completed= ! todo.completed
+      if(todo.completed != true){
+        todo.completed = true
+      }
     }
     }
   })
