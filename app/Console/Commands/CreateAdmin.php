@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Support\Facades\App;
 
 class CreateAdmin extends Command
 {
@@ -21,6 +22,8 @@ class CreateAdmin extends Command
      * @var string
      */
     protected $description = 'Create Admin user';
+
+    protected $user;
 
     /**
      * Create a new command instance.
@@ -39,12 +42,13 @@ class CreateAdmin extends Command
      */
     public function handle()
     {
-        $user = App/User::class;
+        $user = new User();
 
-        $this->user->name= $this->ask('Enter user name?', 'admin');
-        $this->user->password = $this->ask('Enter your password?', 'admin');
-        $this->user->email = $this->ask('Enter your email address','');
-        $this->user->save();
-        $this->info("{$this->user->name} has been generated and saved.");
+        $user->name = $this->ask('Enter user name?', 'admin');
+        $user->password = $this->secret('Enter your password?', 'admin');
+        $user->email = $this->ask('Enter your email address', '');
+        $user->is_admin = true;
+        $user->save();
+        $this->info("{$user->name} has been generated and saved role: Admin.");
     }
 }
