@@ -19,6 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('users', function (){
-
-});
+Route::resource ('users', 'UserController');
