@@ -14,12 +14,12 @@ class UserController extends Controller
 
     public function create()
     {
-        
+        return view('users.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-
+return $request->all();
         
     }
 }

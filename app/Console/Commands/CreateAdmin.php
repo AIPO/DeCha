@@ -49,6 +49,6 @@ class CreateAdmin extends Command
         $user->email = $this->ask('Enter your email address', '');
         $user->is_admin = true;
         $user->save();
-        $this->info("{$user->name} has been generated and saved role: Admin.");
+        $this->info("{$user->name} has been generated and saved with role: Admin.");
     }
 }
