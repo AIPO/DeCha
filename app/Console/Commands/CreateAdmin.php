@@ -45,7 +45,7 @@ class CreateAdmin extends Command
         $user = new User();
 
         $user->name = $this->ask('Enter user name?', 'admin');
-        $user->password = $this->secret('Enter your password?', 'admin');
+        $user->password = bcrypt($this->secret('Enter your password?', 'admin'));
         $user->email = $this->ask('Enter your email address', '');
         $user->is_admin = true;
         $user->save();

@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource ('users', 'UserController');
+Route::get('change', 'UserController@changePassword');
+Route::post('change/save', 'UserController@saveNewPassword');
