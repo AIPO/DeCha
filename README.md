@@ -3,9 +3,6 @@
 Create scaffold for user authentication:
 `php artisan make:auth`
 
-Initialize database:
-`touch database/database.sqlite`
-
 Run migrations: 
 `php artisan migrate`
 
